@@ -135,19 +135,19 @@ You can interact with your deployed contract in two ways:
 
 1. **By your chain's block explorer**
 
-- Get the Contract Address: First, you need to know the address of the deployed smart contract.
-- Open the Block Explorer: Choose a blockchain block explorer that supports the network where your contract is deployed. Examples of popular block explorers are [Etherscan](https://etherscan.io/) for Ethereum, [BscScan](https://bscscan.com/) for BNB Smart Chain, [SnowTrace](https://snowtrace.io/) for Avalanche C-Chain and [PolygonScan](https://polygonscan.com/) for Polygon PoS Chain.
-- Search for the Contract Address: In the search bar of the block explorer, enter the contract address and click "Search". The block explorer will display the contract's details, including its code, transactions, and events.
-- Functions: Look for a "Read Contract" or "Write Contract" section.
-  - Read Functions: For read-only functions (functions that don't modify the state), you can call them directly from the block explorer's interface, and it will display the returned value.
-  - Write Functions: To interact with write functions (functions that modify the state), you will need to provide the necessary parameters and possibly your wallet's signature for authentication. After filling in the required details, submit the transaction.
-- Transaction Monitoring: Block explorers also provide real-time transaction monitoring. After initiating a contract function execution, the explorer will display the transaction details, including the transaction hash, status, and gas fees.
+- **Get the Contract Address**: First, you need to know the address of the deployed smart contract.
+- **Open the Block Explorer**: Choose a blockchain block explorer that supports the network where your contract is deployed. Examples of popular block explorers are [Etherscan](https://etherscan.io/) for Ethereum, [BscScan](https://bscscan.com/) for BNB Smart Chain, [SnowTrace](https://snowtrace.io/) for Avalanche C-Chain and [PolygonScan](https://polygonscan.com/) for Polygon PoS Chain.
+- **Search for the Contract Address**: In the search bar of the block explorer, enter the contract address and click "Search". The block explorer will display the contract's details, including its code, transactions, and events.
+- **Functions**: Look for a "Read Contract" or "Write Contract" section.
+  - **Read Functions**: For read-only functions (functions that don't modify the state), you can call them directly from the block explorer's interface, and it will display the returned value.
+  - **Write Functions**: To interact with write functions (functions that modify the state), you will need to provide the necessary parameters and possibly your wallet's signature for authentication. After filling in the required details, submit the transaction.
+- **Transaction Monitoring**: Block explorers also provide real-time transaction monitoring. After initiating a contract function execution, the explorer will display the transaction details, including the transaction hash, status, and gas fees.
 
 _It's essential to be cautious when executing write functions, as blockchain transactions are irreversible. Always double-check the inputs._
 
 2. **By a Frontend DApp**
 
-Use the [Mabesi OZ Multi Token Dapp](https://github.com/mabesi/dapp-multitoken) as your Frontend interface user. This DApp was made with React/Next.js to be integrant part of this NFT smart contract.
+Use the [Mabesi OZ Multi Token Dapp](https://github.com/mabesi/dapp-multitoken) as your Frontend interface user. This DApp was made with React/Next.js to be integrant part of this Multi Token smart contract.
 
 ### 🔧 Troubleshooting
 
