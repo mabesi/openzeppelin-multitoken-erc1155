@@ -1,6 +1,6 @@
 # OPENZEPPELIN MULTI TOKEN ERC-1155
 
-A professional solidity Multitoken [ERC-1155 Standard](https://eips.ethereum.org/EIPS/eip-1155) contract example based on Openzeppelin library.
+A professional solidity Multitoken [ERC-1155 Standard](https://eips.ethereum.org/EIPS/eip-1155) contract example based on OpenZeppelin library.
 
 ## :speech_balloon: Description
 
@@ -36,9 +36,18 @@ In addition to the basic functionalities of an NFT contract, such as mint, burn,
 
 ### 🏗️ Built With
 
-- Solidity
-- TypeScript
-- Hardhat
+The core of this project was built using all these great tools:
+
+- [Solidity](https://soliditylang.org/) - Ethereum Programming Language
+- [TypeScript](https://www.typescriptlang.org/) - Typed Programming Language
+- [Hardhat](https://hardhat.org/) - Development Environment for Ethereum software
+- [Ethers.js](https://ethers.org/) - Web3 Library
+- [OpenZepellin](https://www.openzeppelin.com/) - Web3 Solidity Contract Libraries
+- [Node.js](https://nodejs.org/) - JavaScript Runtime Environment
+
+In addition, in order to function fully and satisfactorily, this project uses resources from the following services:
+
+- [Pinata](https://app.pinata.cloud/) - IPFS File Sharing
 
 ## Getting Started
 
@@ -73,48 +82,36 @@ RPC_URL=
 CHAIN_ID=
 ```
 
-Change the `"MabesiAzukiNFT"` and the `"MBAFT"` for the token name and symbol of your choice.
+Change the `currentSupply` for the three token types initial supply and the `tokenPrice` for your desired initial value.
 
 ```solidity
-    constructor() ERC721A("MabesiAzukiNFT", "MBAFT") {
-        _owner = payable(msg.sender);
-    }
+    uint[] public currentSupply = [50, 50, 50];
+    uint public tokenPrice = 0.01 ether;
 ```
 
-Change the `0.01` for the price of your choice.
+After create the [Metadata URI JSON Schema](https://eips.ethereum.org/EIPS/eip-721#specification), adjust the `BASE_URI` address for your own address.
 
 ```solidity
-    function mint(uint256 quantity) public payable {
-        require(msg.value >= (0.01 ether * quantity), "Insufficient payment");
-        _mint(msg.sender, quantity);
-    }
-```
-
-After create the [Metadata URI JSON Schema](https://eips.ethereum.org/EIPS/eip-721#specification), adjust your Base URI Metadata address in this function.
-
-```solidity
-    function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://QmPbCf6w9TZdVhroWyBZ6LY2cDkex6Qe7eLiXG3sEUHYWF/";
-    }
+    string public constant BASE_URI = "ipfs://myuriaddress/";
 ```
 
 And, finally, change the Contract URI metadata address:
 
 ```solidity
     function contractURI() public pure returns (string memory) {
-        return "ipfs://QmQRmf8h6SGBrfBTqBxUzDmzZAfDxjL6scV5bDBJSBmSeP";
+        return "ipfs://mycontracturiaddress/";
     }
 ```
 
 ### 👨‍💻 Testing
 
-To test your ERC-721A smart contract run this command:
+To test your OpenZeppelin ERC-1155 smart contract run this command:
 
 ```bash
 $ npm test
 ```
 
-To test and view the tests coverage of your ERC-721A smart contract run this command:
+To test and view the tests coverage of your OpenZeppelin ERC-1155 smart contract run this command:
 
 ```bash
 $ npm run cov
@@ -122,7 +119,7 @@ $ npm run cov
 
 ### 👷 Deploy
 
-To deploy your ERC-721A smart contract run this command:
+To deploy your OpenZeppelin ERC-1155 smart contract run this command:
 
 ```bash
 $ npm run deploy
@@ -166,13 +163,6 @@ It is possible to perform data migration in case of a new deployment of the cont
 
 Thanks to all these amazing people and tools that served as a source of knowledge or were an integral part in the construction of this project.
 
-- [Hardhat](https://hardhat.org/) - Development Environment for Ethereum software
-- [OpenZepellin](https://www.openzeppelin.com/) - Web3 Solidity Libraries
-- [Azuki](https://www.azuki.com) - Anime Avatar NFT Collection Community
-- [Pinata](https://app.pinata.cloud/) - IPFS File Sharing
-- [Node.js](https://nodejs.org/) - JavaScript Runtime Environment
-- [Ethers.js](https://ethers.org/) - Web3 Library
-- [TypeScript](https://www.typescriptlang.org/) - Typed Programming Language
 - [LuizTools](https://www.luiztools.com.br/) - JavaScript and Web3 Online Courses
 
 ### 🔎 See Also
