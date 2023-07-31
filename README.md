@@ -136,7 +136,7 @@ You can interact with your deployed contract in two ways:
 1. **By your chain's block explorer**
 
 - Get the Contract Address: First, you need to know the address of the deployed smart contract.
-- Open the Block Explorer: Choose a blockchain block explorer that supports the network where your contract is deployed. Examples of popular block explorers are Etherscan for Ethereum and BscScan for BNB Smart Chain.
+- Open the Block Explorer: Choose a blockchain block explorer that supports the network where your contract is deployed. Examples of popular block explorers are [Etherscan](https://etherscan.io/) for Ethereum, [BscScan](https://bscscan.com/) for BNB Smart Chain, [SnowTrace](https://snowtrace.io/) for Avalanche C-Chain and [PolygonScan](https://polygonscan.com/) for Polygon PoS Chain.
 - Search for the Contract Address: In the search bar of the block explorer, enter the contract address and click "Search". The block explorer will display the contract's details, including its code, transactions, and events.
 - Functions: Look for a "Read Contract" or "Write Contract" section.
   - Read Functions: For read-only functions (functions that don't modify the state), you can call them directly from the block explorer's interface, and it will display the returned value.
@@ -165,11 +165,14 @@ Thanks to all these amazing people and tools that served as a source of knowledg
 
 ### 🔎 See Also
 
+Enjoy these similar projects that can help you as a way of learning or as a basis for creating a larger project.
+
 - [Basic Token ERC-20](https://github.com/mabesi/solidity-coin-erc20)
 - [Basic Token BEP-20](https://github.com/mabesi/solidity-coin-bep20)
 - [Basic NFT ERC-721](https://github.com/mabesi/solidity-nft-erc721)
-- [Basic Multi Token ERC-1155](https://github.com/mabesi/solidity-multitoken-erc1155)
+- [Basic Azuki NFT ERC-721A](https://github.com/mabesi/azuki-nft)
 - [Mabesi Azuki NFT DApp](https://github.com/mabesi/dapp-nft)
+- [Basic Multi Token ERC-1155](https://github.com/mabesi/solidity-multitoken-erc1155)
 
 ### ✒️ Authors & Contributors
 
