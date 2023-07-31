@@ -147,7 +147,7 @@ _It's essential to be cautious when executing write functions, as blockchain tra
 
 2. **By a Frontend DApp**
 
-Use the [Mabesi OZ Multi Token Dapp](https://github.com/mabesi/dapp-multitoken) as your Frontend interface user. This DApp was made with React/Next.js to be integrant part of this Multi Token smart contract.
+Use the [Mabesi OZ Multi Token Dapp](https://github.com/mabesi/dapp-multitoken) as your frontend interface user. This DApp was made with React/Next.js to be integrant part of this Multi Token smart contract.
 
 ### 🔧 Troubleshooting
 
