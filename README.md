@@ -28,11 +28,12 @@ A professional solidity Multitoken [ERC-1155 Standard](https://eips.ethereum.org
 
 ### 🛠️ Features
 
-In addition to the basic functionalities of an NFT contract, such as mint, burn, balance and transfer, these are the main features of an ERC-721A smart contract:
+The OpenZeppelin ERC-1155 Multi Token contract offers these main features:
 
-- **Optimization 1** - Removing duplicate storage from OpenZeppelin’s (OZ) ERC721Enumerable
-- **Optimization 2** - updating the owner’s balance once per batch mint request, instead of per minted NFT
-- **Optimization 3** - updating the owner data once per batch mint request, instead of per minted NFT
+- **Multi-Token Support**: ERC-1155 contracts can manage multiple token types within a single contract. This means you can have both fungible (e.g., currencies) and non-fungible (e.g., unique assets) tokens managed together.
+- **Gas Efficiency**: ERC-1155 is designed to be gas-efficient by allowing batch transfers and batch approvals, reducing the number of individual transactions required.
+- **Single Contract, Multiple Tokens**: Unlike other token standards like ERC-20 or ERC-721, which require separate contracts for each token, ERC-1155 allows you to manage multiple token types under a single contract, reducing deployment and maintenance costs.
+- **Interface Compatibility**: ERC-1155 adheres to a standard interface, ensuring compatibility with various applications, marketplaces, and wallets that support this standard.
 
 ### 🏗️ Built With
 
@@ -40,7 +41,7 @@ The core of this project was built using all these great tools:
 
 - [Solidity](https://soliditylang.org/) - Ethereum Programming Language
 - [TypeScript](https://www.typescriptlang.org/) - Typed Programming Language
-- [Hardhat](https://hardhat.org/) - Development Environment for Ethereum software
+- [Hardhat](https://hardhat.org/) - Development Environment for Ethereum Software
 - [Ethers.js](https://ethers.org/) - Web3 Library
 - [OpenZepellin](https://www.openzeppelin.com/) - Web3 Solidity Contract Libraries
 - [Node.js](https://nodejs.org/) - JavaScript Runtime Environment
@@ -58,10 +59,6 @@ In addition, in order to function fully and satisfactorily, this project uses re
 - IDE or Text Editor
 - Wallet address in an EVM compatible chain
 - Balance to deploy the Smart Contract
-
-### :arrow_down: Install
-
-Not applicable.
 
 ### :gear: Configuration
 
