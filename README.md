@@ -133,7 +133,7 @@ $ npm run verify <contract_address>
 
 You can interact with your deployed contract in two ways:
 
-1. By your chain's block explorer
+1. **By your chain's block explorer**
 
 - Get the Contract Address: First, you need to know the address of the deployed smart contract.
 - Open the Block Explorer: Choose a blockchain block explorer that supports the network where your contract is deployed. Examples of popular block explorers are Etherscan for Ethereum and BscScan for BNB Smart Chain.
@@ -145,7 +145,9 @@ You can interact with your deployed contract in two ways:
 
 _It's essential to be cautious when executing write functions, as blockchain transactions are irreversible. Always double-check the inputs._
 
-2. Use the [Mabesi OZ Multi Token Dapp](https://github.com/mabesi/dapp-multitoken) as your Frontend interface user. This DApp was made with React/Next.js to be integrant part of this NFT smart contract.
+2. **By a Frontend DApp**
+
+Use the [Mabesi OZ Multi Token Dapp](https://github.com/mabesi/dapp-multitoken) as your Frontend interface user. This DApp was made with React/Next.js to be integrant part of this NFT smart contract.
 
 ### 🔧 Troubleshooting
 
