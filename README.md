@@ -49,6 +49,7 @@ The core of this project was built using all these great tools:
 In addition, in order to function fully and satisfactorily, this project uses resources from the following services:
 
 - [Pinata](https://app.pinata.cloud/) - IPFS File Sharing
+- [SnowTrace](https://snowtrace.io/) - Avalanche C-Chain Block Explorer
 
 ## Getting Started
 
@@ -130,23 +131,21 @@ $ npm run verify <contract_address>
 
 ### :arrow_forward: Usage
 
-You can interact with your deployed contract in two ways
+You can interact with your deployed contract in two ways:
 
 1. By your chain's block explorer
 
-- Find the Contract Address: First, you need to know the address of the deployed smart contract. This address is a hexadecimal string (e.g., 0x123abc...) and serves as the unique identifier for the contract on the blockchain.
-- Open the Block Explorer: Choose a blockchain block explorer that supports the network where your contract is deployed. Examples of popular block explorers are Etherscan for Ethereum and BscScan for Binance Smart Chain. Go to the website of the block explorer you want to use.
-- Search for the Contract Address: In the search bar of the block explorer, enter the contract address you want to interact with and click "Search" or a similar button. The block explorer will display the contract's details, including its code, transactions, and events.
-- Interacting with Functions: If the smart contract has public functions that can be called, the block explorer might provide a user interface to interact with those functions. You may need to look for a "Read Contract" or "Write Contract" section. In some block explorers, this feature is available in the "Contract" or "Smart Contract" tab.
+- Get the Contract Address: First, you need to know the address of the deployed smart contract.
+- Open the Block Explorer: Choose a blockchain block explorer that supports the network where your contract is deployed. Examples of popular block explorers are Etherscan for Ethereum and BscScan for BNB Smart Chain.
+- Search for the Contract Address: In the search bar of the block explorer, enter the contract address and click "Search". The block explorer will display the contract's details, including its code, transactions, and events.
+- Functions: Look for a "Read Contract" or "Write Contract" section.
   - Read Functions: For read-only functions (functions that don't modify the state), you can call them directly from the block explorer's interface, and it will display the returned value.
   - Write Functions: To interact with write functions (functions that modify the state), you will need to provide the necessary parameters and possibly your wallet's signature for authentication. After filling in the required details, submit the transaction.
-- Transaction Confirmation: When you send a transaction to the contract, the block explorer will provide a transaction hash. You can use this hash to track the status of the transaction on the blockchain. It may take some time for the transaction to be mined and confirmed by the network.
-- View Transaction History and Events: The block explorer will also show the transaction history of the contract, including all past interactions. Additionally, if the contract emits events, you can find and explore those events in the block explorer to see the details of each event occurrence.
+- Transaction Monitoring: Block explorers also provide real-time transaction monitoring. After initiating a contract function execution, the explorer will display the transaction details, including the transaction hash, status, and gas fees.
 
-_It's essential to be cautious when interacting with smart contracts, especially when executing write functions, as blockchain transactions are irreversible. Always double-check the inputs and the contract's behavior to avoid unintended consequences.
-Keep in mind that the specific steps and options available for interacting with a smart contract through a block explorer may vary based on the block explorer's design and the features supported by the underlying blockchain network._
+_It's essential to be cautious when executing write functions, as blockchain transactions are irreversible. Always double-check the inputs._
 
-2. Use the [Mabesi Azuki NFT DApp](https://github.com/mabesi/dapp-nft) as your Frontend interface user. This DApp was made with React/Next.js to be integrant part of this NFT smart contract.
+2. Use the [Mabesi OZ Multi Token Dapp](https://github.com/mabesi/dapp-multitoken) as your Frontend interface user. This DApp was made with React/Next.js to be integrant part of this NFT smart contract.
 
 ### 🔧 Troubleshooting
 
