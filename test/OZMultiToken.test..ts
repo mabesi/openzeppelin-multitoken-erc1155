@@ -25,6 +25,27 @@ describe("OZMultiToken", function () {
     expect(supply).to.equal(49, "Cannot mint (supply)");
   });
 
+  it("Should NOT mint (not exists)", async function () {
+    const { cc, owner, user } = await loadFixture(deployFixture);
+
+    await expect(cc.mint(3, { value: ethers.parseEther("0.01")})).to.be.revertedWith("This token does not exists");
+  });
+  
+  it("Should NOT mint (payment)", async function () {
+    const { cc, owner, user } = await loadFixture(deployFixture);
+
+    await expect(cc.mint(0, { value: ethers.parseEther("0.001")})).to.be.revertedWith("Insufficient payment");
+  });
+
+  it("Should NOT mint (supply)", async function () {
+    const { cc, owner, user } = await loadFixture(deployFixture);
+
+    for (let i=0; i < 50; i++)
+      await cc.mint(0, { value: ethers.parseEther("0.01")});
+
+    await expect(cc.mint(0, { value: ethers.parseEther("0.01")})).to.be.revertedWith("Max supply reached");
+  });
+
     
   // it("Should mint", async function () {
   //   const { cc, owner, user } = await loadFixture(deployFixture);
