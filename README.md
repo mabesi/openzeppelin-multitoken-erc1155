@@ -70,7 +70,7 @@ After this, adjust the `SECRET` with your seed phrase, `API_KEY` with your API K
 # MetaMask mnemonic 12-word phrase
 SECRET=
 
-# Blockchain API Key (get in EtherScan, BSC Scan, SnowTrace, ...)
+# Blockchain API Key (get in EtherScan, BSC Scan, SnowTrace,...)
 API_KEY=
 
 # RPC Server URL (e.g. "https://api.avax-test.network/ext/bc/C/rpc")
