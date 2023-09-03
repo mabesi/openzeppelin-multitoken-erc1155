@@ -14,10 +14,22 @@ describe("OZMultiToken", function () {
     return { cc, owner, user };
   }
     
-  it("Should...", async function () {
+  it("Should mint", async function () {
     const { cc, owner, user } = await loadFixture(deployFixture);
 
-    expect(1).to.equal(1);
+    await cc.mint(0, { value: ethers.parseEther("0.01")});
+    const balance = await cc.balanceOf(owner.address, 0);
+    const supply = await cc.currentSupply(0);
+
+    expect(balance).to.equal(1, "Cannot mint (balance)");
+    expect(supply).to.equal(49, "Cannot mint (supply)");
   });
+
+    
+  // it("Should mint", async function () {
+  //   const { cc, owner, user } = await loadFixture(deployFixture);
+
+  //   expect(1).to.equal(1);
+  // });
 
 });
