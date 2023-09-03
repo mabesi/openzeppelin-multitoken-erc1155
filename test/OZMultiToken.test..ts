@@ -213,5 +213,62 @@ describe("OZMultiToken", function () {
                 .to.be.revertedWith("ERC1155: caller is not token owner or approved");
   });
 
+  it("Should supports interface", async function () {
+    const { cc, owner, user } = await loadFixture(deployFixture);
+
+    const support = await cc.supportsInterface("0xd9b67a26");
+
+    expect(support).to.equal(true, "Does not support interface ERC-1155");
+  });
+
+  it("Should withdraw", async function () {
+    const { cc, owner, user } = await loadFixture(deployFixture);
+
+    const instance = cc.connect(user);
+    await instance.mint(0, { value: ethers.parseEther("0.01")});
+
+    const ccBalanceBefore = await ethers.provider.getBalance(cc.getAddress());
+    const ownerBalanceBefore = await ethers.provider.getBalance(owner.address);
+
+    await cc.withdraw();
+
+    const ccBalanceAfter = await ethers.provider.getBalance(cc.getAddress());
+    const ownerBalanceAfter = await ethers.provider.getBalance(owner.address);
+
+    expect(ccBalanceBefore).to.equal(ethers.parseEther("0.01"), "Cannot withdraw");
+    expect(ccBalanceAfter).to.equal(0, "Cannot withdraw");
+    expect(ownerBalanceAfter).to.greaterThan(ownerBalanceBefore, "Cannot withdraw");
+  });
+
+  it("Should NOT withdraw (permission)", async function () {
+    const { cc, owner, user } = await loadFixture(deployFixture);
+
+    const instance = cc.connect(user);
+
+    await expect(instance.withdraw()).to.be.revertedWith("Caller is not owner");
+  });
+
+  it("Should has URI metadata", async function () {
+    const { cc, owner, user } = await loadFixture(deployFixture);
+
+    await cc.mint(0, { value: ethers.parseEther("0.01")});
+    const uri = await cc.uri(0);
+    
+    expect(uri).to.equal("ipfs://myuriaddress/0.json", "Does not have URI");
+  });
+
+  it("Should NOT has URI metadata", async function () {
+    const { cc, owner, user } = await loadFixture(deployFixture);
+
+    await expect(cc.uri(10)).to.be.revertedWith("This token does not exists");
+  });
+
+  it("Should has contract URI metadata", async function () {
+    const { cc, owner, user } = await loadFixture(deployFixture);
+
+    const ccuri = await cc.contractURI();
+    
+    expect(ccuri).to.equal("ipfs://mycontracturiaddress/", "Does not have contract URI");
+  });
 
 });

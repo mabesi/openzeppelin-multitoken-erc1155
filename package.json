@@ -4,7 +4,8 @@
   "description": "A professional solidity Multitoken ERC-1155 contract example based on Openzeppelin library",
   "main": "index.js",
   "scripts": {
-    "test": "npx hardhat coverage",
+    "test": "npx hardhat test",
+    "cov": "npx hardhat coverage",
     "compile": "npx hardhat compile"
   },
   "keywords": [],

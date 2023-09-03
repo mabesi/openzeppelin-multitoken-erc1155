@@ -50,6 +50,8 @@ contract OZMultiToken is ERC1155, ERC1155Burnable {
     // The {0} key pattern was not used because of problems with various
     // Web3 clients and marketplaces, like OpenSea
     function uri(uint256 id) public pure override returns (string memory) {
+        require(id < 3, "This token does not exists");
+        
         return string.concat(BASE_URI, Strings.toString(id), ".json");
     }
 
