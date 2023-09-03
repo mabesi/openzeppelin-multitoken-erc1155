@@ -27,13 +27,11 @@ describe("OZMultiToken", function () {
 
   it("Should NOT mint (not exists)", async function () {
     const { cc, owner, user } = await loadFixture(deployFixture);
-
     await expect(cc.mint(3, { value: ethers.parseEther("0.01")})).to.be.revertedWith("This token does not exists");
   });
   
   it("Should NOT mint (payment)", async function () {
     const { cc, owner, user } = await loadFixture(deployFixture);
-
     await expect(cc.mint(0, { value: ethers.parseEther("0.001")})).to.be.revertedWith("Insufficient payment");
   });
 
@@ -45,12 +43,50 @@ describe("OZMultiToken", function () {
 
     await expect(cc.mint(0, { value: ethers.parseEther("0.01")})).to.be.revertedWith("Max supply reached");
   });
-
     
-  // it("Should mint", async function () {
-  //   const { cc, owner, user } = await loadFixture(deployFixture);
+  it("Should burn", async function () {
+    const { cc, owner, user } = await loadFixture(deployFixture);
 
-  //   expect(1).to.equal(1);
-  // });
+    await cc.mint(0, { value: ethers.parseEther("0.01")});
+    await cc.burn(owner.address, 0, 1);
+    const balance = await cc.balanceOf(owner.address, 0);
+    const supply = await cc.currentSupply(0);
+
+    expect(balance).to.equal(0, "Cannot burn (balance)");
+    expect(supply).to.equal(49, "Cannot burn (supply)");
+  });
+
+  it("Should burn (approved)", async function () {
+    const { cc, owner, user } = await loadFixture(deployFixture);
+
+    await cc.mint(0, { value: ethers.parseEther("0.01")});
+    await cc.setApprovalForAll(user.address, true);
+    const approved = await cc.isApprovedForAll(owner.address, user.address);
+
+    const instance = cc.connect(user);
+    await instance.burn(owner.address, 0, 1);
+
+    const balance = await cc.balanceOf(owner.address, 0);
+    const supply = await cc.currentSupply(0);
+
+    expect(balance).to.equal(0, "Cannot burn (approved)(balance)");
+    expect(supply).to.equal(49, "Cannot burn (approved)(supply)");
+    expect(approved).to.equal(true, "Cannot burn (approved)(approved)");
+  });
+
+  it("Should NOT burn (balance)", async function () {
+    const { cc, owner, user } = await loadFixture(deployFixture);
+    await expect(cc.burn(owner.address, 0, 1)).to.be.revertedWith("ERC1155: burn amount exceeds balance");
+  });
+
+  it("Should NOT burn (permission)", async function () {
+    const { cc, owner, user } = await loadFixture(deployFixture);
+
+    await cc.mint(0, { value: ethers.parseEther("0.01")});
+    const instance = cc.connect(user);
+
+    await expect(instance.burn(owner.address, 0, 1)).to.be.revertedWith("ERC1155: caller is not token owner or approved");
+  });
+
 
 });
