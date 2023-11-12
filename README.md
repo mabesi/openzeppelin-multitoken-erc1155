@@ -12,16 +12,8 @@ A professional solidity Multitoken [ERC-1155 Standard](https://eips.ethereum.org
     <tr>
         <td colspan='2'>
             <kbd>
-                <img src="./assets/oppenzeppelin-erc1155-contract.png" />
+                <img src="./assets/oz_erc1155_contract.png" />
             </kbd>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <img src="./assets/oppenzeppelin-erc1155-read.png" />
-        </td>
-        <td>
-            <img src="./assets/oppenzeppelin-erc1155-write.png" />
         </td>
     </tr>
 <table>
@@ -173,6 +165,7 @@ Enjoy these similar projects that can help you as a way of learning or as a basi
 - [Basic Azuki NFT ERC-721A](https://github.com/mabesi/azuki-nft)
 - [Mabesi Azuki NFT DApp](https://github.com/mabesi/dapp-nft)
 - [Basic Multi Token ERC-1155](https://github.com/mabesi/solidity-multitoken-erc1155)
+- [OpenZeppelin Upgradeable Proxy ERC-1967](https://github.com/mabesi/openzepellyn-upgradeable-proxy-erc1967)
 
 ### ✒️ Authors & Contributors
 
