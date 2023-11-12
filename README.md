@@ -6,7 +6,7 @@ A professional solidity Multitoken [ERC-1155 Standard](https://eips.ethereum.org
 
 <p align="justify">ERC-1155 is a widely adopted standard for fungible and non-fungible tokens on the Ethereum blockchain. It was proposed as an improvement to the ERC-20 and ERC-721 standards, combining the functionalities of both into a single standard.</p>
 <p align="justify">OpenZeppelin Contracts helps you minimize risk by using battle-tested libraries of smart contracts for Ethereum and other blockchains. It includes the most used implementations of ERC standards.</p>
-<p align="justify">This project is a simple implementation of OpenZepplein ERC-1155 standard, with the most important functionalities for an Multi Token Smart Contract, to help you save time in coding.</p>
+<p align="justify">This project is a simple implementation of OpenZeppelin ERC-1155 standard, with the most important functionalities for an Multi Token Smart Contract, to help you save time in coding.</p>
 
 <table>
     <tr>
